@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Блочные элементы</title>
+        <link href="style.css" rel="stylesheet">
+        <script src="skript.js"></script>
+    </head>
+    <body>
+        <div class="calculator">
+            <form method="post" name="calc">
+                <input type="text", class="field" name="disp" value="0">
+                <input type="button" class="button" value="C" onclick="clean()">
+                <input type="button" class="sign" value="/" onclick="readSign(this)">
+                <input type="button" class="sign" value="*" onclick="readSign(this)">
+                <input type="button" class="sign" value="-" onclick="readSign(this)">
+                
+                <div class="figures">
+                <input type="button" class="number" value="1" onclick="readNumber(this)" >
+                <input type="button" class="number" value="2" onclick="readNumber(this)" >
+                <input type="button" class="number" value="3" onclick="readNumber(this)" >
+                <input type="button" class="number" value="4" onclick="readNumber(this)" >
+                <input type="button" class="number" value="5" onclick="readNumber(this)" >
+                <input type="button" class="number" value="6" onclick="readNumber(this)" >
+                <input type="button" class="number" value="7" onclick="readNumber(this)" >
+                <input type="button" class="number" value="9" onclick="readNumber(this)" >
+                <input type="button" class="number" value="8" onclick="readNumber(this)" >
+                <input type="button" class="number0" value="0" onclick="readNumber(this)" >
+                <input type="button" class="number" value="." onclick="readNumber(this)">
+                </div>
+                <input type="button" class="long1" value="+" onclick="readSign(this)">
+                <input type="button" class="long2" value="=" onclick="result()">
+            </form>
+        </div>
+    </body>
+</html>
