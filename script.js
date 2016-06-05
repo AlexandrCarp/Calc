@@ -5,7 +5,7 @@ var sign,
     show;
 function readNumber (button) {
 	if (sign !== undefined) {
-		resetField ();
+		resetField();
 		number += button.value;
 	    
 	} else {
