@@ -29,7 +29,6 @@ function readSign (button) {
 		number = 0;
 	} else {
 		sign = button.value;
-		document.calc.disp.value = "0";
 	}
 };
 function calculate () {
@@ -58,6 +57,6 @@ function clean () {
 };
 function resetField () { 
 	if (typeof sign !== 'undefined' && number == 0) {
-		document.calc.disp.value = 0;
+		document.calc.disp.value = this.value;
 		}
 };
