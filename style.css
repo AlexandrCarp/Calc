@@ -16,7 +16,7 @@
    margin-top:10px;
    text-align:right;
 }
-.button {
+.clean {
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -37,6 +37,7 @@
     position:relative;
     bottom:191px;
     left:158px;
+    margin:0px;
     
 }
 .long2 {

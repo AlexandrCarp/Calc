@@ -2,33 +2,48 @@ var sign,
     savedNumber = 0,
     number = 0,
     field,
-    show;
+    show,
+    figures=document.querySelectorAll('.number'),
+    signVal=document.querySelectorAll('.sign'),
+    equally=document.querySelectorAll('.long2'),
+    clear=document.querySelectorAll('.clean');
+function addEvent(element, func) {
+	for (var i = 0, len = element.length; i < len; i++) {
+			element[i].addEventListener('click', func);
+		};
+};   
 function readNumber (button) {
+	e = event.clientX;
+	f = event.clientY;
+	elem=document.elementFromPoint(e, f);
 	if (sign !== undefined) {
 		resetField();
-		number += button.value;
+		number += elem.value;
 	    
 	} else {
-		savedNumber += button.value;
+		savedNumber +=elem.value;
 	}
 
 	field = document.calc.disp.value;
 	if (field > 0) {
-		show = field.toString() + button.value;
+		show = field.toString() + elem.value;
 		document.calc.disp.value = show;
 
 	} else  {
-	document.calc.disp.value = button.value;
+	document.calc.disp.value = elem.value;
     }
 };
 function readSign (button) {
+	e = event.clientX;
+	f = event.clientY;
+	elem=document.elementFromPoint(e, f);
 	if(sign !== undefined) {
 		calculate ();
-		sign = button.value;
+		sign = elem.value;
 		document.calc.disp.value = savedNumber;
 		number = 0;
 	} else {
-		sign = button.value;
+		sign = elem.value;
 	}
 };
 function calculate () {
@@ -60,3 +75,7 @@ function resetField () {
 		document.calc.disp.value = this.value;
 		}
 };
+addEvent(figures, readNumber);
+addEvent(signVal, readSign);
+addEvent(equally, result);
+addEvent(clear, clean);
