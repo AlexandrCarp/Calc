@@ -24,12 +24,12 @@ function readNumber (button) {
 	} else {
 		savedNumber +=current;
 	}
-	field = display.value;
+	field = display.innerHTML;
 	if (field > 0) {
 		show = field.toString() + current;
-		display.value = show;
+		display.innerHTML = show;
 	} else  {
-	display.value = current;
+	display.innerHTML = current;
 	}
 };
 function readSign (button) {
@@ -56,7 +56,7 @@ function calculate () {
 	} else {
 		savedNumber = (+savedNumber / Number(number));
 	}
-	display.value = savedNumber;
+	display.innerHTML = savedNumber;
 };
 function result () {
 	calculate ();
@@ -67,11 +67,11 @@ function clean () {
 	sign = undefined;
 	savedNumber = 0;
 	number = 0;
-	display.value = 0
+	display.innerHTML = '0'
 };
 function resetField () { 
 	if (typeof sign !== 'undefined' && number == 0) {
-		display.value = this.value;
+		display.innerHTML = this.value;
 		}
 };
 addEvent(figures, readNumber);
