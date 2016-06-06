@@ -6,7 +6,8 @@ var sign,
 	figures=document.querySelectorAll('.number'),
 	signVal=document.querySelectorAll('.sign'),
 	equally=document.querySelectorAll('.long2'),
-	clear=document.querySelectorAll('.clean');
+	clear=document.querySelectorAll('.clean'),
+	display=document.querySelector('.field');
 function addEvent(element, func) {
 	for (var i = 0, len = element.length; i < len; i++) {
 			element[i].addEventListener('click', func);
@@ -22,12 +23,12 @@ function readNumber (button) {
 	} else {
 		savedNumber +=elem.value;
 	}
-	field = document.calc.disp.value;
+	field = display.value;
 	if (field > 0) {
 		show = field.toString() + elem.value;
-		document.calc.disp.value = show;
+		display.value = show;
 	} else  {
-	document.calc.disp.value = elem.value;
+	display.value = elem.value;
 	}
 };
 function readSign (button) {
@@ -37,7 +38,7 @@ function readSign (button) {
 	if(sign !== undefined) {
 		calculate ();
 		sign = elem.value;
-		document.calc.disp.value = savedNumber;
+		display.value = savedNumber;
 		number = 0;
 	} else {
 		sign = elem.value;
@@ -53,7 +54,7 @@ function calculate () {
 	} else {
 		savedNumber = (+savedNumber / Number(number));
 	}
-	document.calc.disp.value = savedNumber;
+	display.value = savedNumber;
 };
 function result () {
 	calculate ();
@@ -64,7 +65,7 @@ function clean () {
 	sign = undefined;
 	savedNumber = 0;
 	number = 0;
-	document.calc.disp.value = 0
+	display.value = 0
 };
 function resetField () { 
 	if (typeof sign !== 'undefined' && number == 0) {
