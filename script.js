@@ -17,31 +17,33 @@ function readNumber (button) {
 	e = event.clientX;
 	f = event.clientY;
 	elem=document.elementFromPoint(e, f);
+	current=elem.dataset.value;
 	if (sign !== undefined) {
 		resetField();
-		number += elem.value;
+		number += current;
 	} else {
-		savedNumber +=elem.value;
+		savedNumber +=current;
 	}
 	field = display.value;
 	if (field > 0) {
-		show = field.toString() + elem.value;
+		show = field.toString() + current;
 		display.value = show;
 	} else  {
-	display.value = elem.value;
+	display.value = current;
 	}
 };
 function readSign (button) {
 	e = event.clientX;
 	f = event.clientY;
 	elem=document.elementFromPoint(e, f);
+	current=elem.dataset.value;
 	if(sign !== undefined) {
 		calculate ();
-		sign = elem.value;
+		sign = current;
 		display.value = savedNumber;
 		number = 0;
 	} else {
-		sign = elem.value;
+		sign = current;
 	}
 };
 function calculate () {
@@ -69,7 +71,7 @@ function clean () {
 };
 function resetField () { 
 	if (typeof sign !== 'undefined' && number == 0) {
-		document.calc.disp.value = this.value;
+		display.value = this.value;
 		}
 };
 addEvent(figures, readNumber);
