@@ -3,6 +3,7 @@ var sign,
 	number = '',
 	field,
 	show,
+	result,
 	figures=document.querySelectorAll('.number'),
 	signVal=document.querySelectorAll('.sign'),
 	equally=document.querySelectorAll('.long2'),
@@ -14,20 +15,9 @@ function addEvent(element, func) {
 		};
 };
 function readNumber (button) {
-	current=this.dataset.value;
 	resetField();
-	if (sign !== undefined) {
-		number += current;
-	} else {
-		savedNumber +=current;
-	}
-	field = display.innerHTML;
-	if (field > 0) {
-		show = field.toString() + current;
-		display.innerHTML = show;
-	} else  {
-	display.innerHTML = current;
-	}
+	number += this.dataset.value;
+	display.innerHTML = number;
 };
 function readSign (button) {
 	current=this.dataset.value;
@@ -36,9 +26,15 @@ function readSign (button) {
 		sign = current;
 		display.value = savedNumber;
 		number = '';
-	} else {
+	} else if (savedNumber=='') {
 		sign = current;
-	}
+		savedNumber = +number;
+		display.innerHTML = savedNumber;
+		number = ''
+	} else {		
+		sign = current;
+		number = ''
+	} 
 };
 function calculate () {
 	if (~sign.indexOf ("+")) {
@@ -55,7 +51,7 @@ function calculate () {
 function result () {
 	calculate ();
 	sign = undefined;
-	number = '';
+	//number = '';
 };
 function clean () {
 	sign = undefined;
@@ -64,7 +60,7 @@ function clean () {
 	display.innerHTML = '0'
 };
 function resetField () { 
-	if (typeof sign !== 'undefined' && number == '') {
+	if (typeof sign !== 'undefined' && number === undefined) {
 		display.innerHTML = this.value;
 		}
 };
