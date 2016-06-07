@@ -14,10 +14,7 @@ function addEvent(element, func) {
 		};
 };
 function readNumber (button) {
-	e = event.clientX;
-	f = event.clientY;
-	elem=document.elementFromPoint(e, f);
-	current=elem.dataset.value;
+	current=this.dataset.value;
 	if (sign !== undefined) {
 		resetField();
 		number += current;
@@ -33,10 +30,7 @@ function readNumber (button) {
 	}
 };
 function readSign (button) {
-	e = event.clientX;
-	f = event.clientY;
-	elem=document.elementFromPoint(e, f);
-	current=elem.dataset.value;
+	current=this.dataset.value;
 	if(sign !== undefined) {
 		calculate ();
 		sign = current;
