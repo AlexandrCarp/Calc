@@ -1,6 +1,6 @@
 var sign,
-	savedNumber = 0,
-	number = 0,
+	savedNumber = '',
+	number = '',
 	field,
 	show,
 	figures=document.querySelectorAll('.number'),
@@ -15,8 +15,8 @@ function addEvent(element, func) {
 };
 function readNumber (button) {
 	current=this.dataset.value;
+	resetField();
 	if (sign !== undefined) {
-		resetField();
 		number += current;
 	} else {
 		savedNumber +=current;
@@ -35,7 +35,7 @@ function readSign (button) {
 		calculate ();
 		sign = current;
 		display.value = savedNumber;
-		number = 0;
+		number = '';
 	} else {
 		sign = current;
 	}
@@ -55,16 +55,16 @@ function calculate () {
 function result () {
 	calculate ();
 	sign = undefined;
-	number = 0;
+	number = '';
 };
 function clean () {
 	sign = undefined;
-	savedNumber = 0;
-	number = 0;
+	savedNumber = '';
+	number = '';
 	display.innerHTML = '0'
 };
 function resetField () { 
-	if (typeof sign !== 'undefined' && number == 0) {
+	if (typeof sign !== 'undefined' && number == '') {
 		display.innerHTML = this.value;
 		}
 };
