@@ -1,67 +1,64 @@
 .calculator {
-    margin: 10px;
-    padding: 10px;
-    height:300px;
-    width:200px;
-    border: 2px solid; 
-    border-radius: 10%;
+		margin: 10px;
+		padding: 10px;
+		height:300px;
+		width:200px;
+		border: 2px solid; 
+		border-radius: 10%;
 }
 .field {
-   position: relativ;
-   margin-left:-2px;
-   height:30px;
-   width:200px;
-   margin-bottom:15px;
-   border-radius: 25%;
-   margin-top:10px;
-   text-align:right;
+		position: relativ;
+		margin-left:-2px;
+		height:30px;
+		width:200px;
+		margin-bottom:15px;
+		border-radius: 25%;
+		margin-top:10px;
+		text-align:right;
 }
 .clean {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  border-radius: 50%;
-  margin:8px;
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		cursor: pointer;
+		border-radius: 50%;
+		margin:8px;
 }
 .sign {
-  width: 30px;
-  height: 30px;
-  border-radius:20%;
-  margin:8px;
+		width: 30px;
+		height: 30px;
+		border-radius:20%;
+		margin:8px;
 }
 .long1 {
-    height:90px;
-    width:30px;
-    border-radius:20%;
-    position:relative;
-    bottom:191px;
-    left:158px;
-    margin:0px;
-    
+		height:90px;
+		width:30px;
+		border-radius:20%;
+		position:relative;
+		bottom:191px;
+		left:158px;
+		margin:0px;
 }
 .long2 {
-    height:90px;
-    width:30px;
-    border-radius:20%;
-    position:relative;
-    bottom:95px;
-    left:124px;
+		height:90px;
+		width:30px;
+		border-radius:20%;
+		position:relative;
+		bottom:95px;
+		left:124px;
 }
 .figures {
-    width:145px;
-    height:190px;
-    margin-left:5px;
+		width:145px;
+		height:190px;
+		margin-left:5px;
 }
 .number {
-    width: 49.5px;
-    height: 52px;
-    margin:-2px;
+		width: 49.5px;
+		height: 52px;
+		margin:-2px;
 }
 .number0 {
-    width: 99px;
-    height: 52px;
-    margin:-2px;
+		width: 99px;
+		height: 52px;
+		margin:-2px;
 }
-    
-    

@@ -25,7 +25,7 @@ function readNumber (button) {
 function readSign (button) {
 	current=this.dataset.value;
 	if(sign !== undefined) {
-		calculate ();
+		calculate();
 		sign = current;
 		display.value = savedNumber;
 		number = '';
@@ -59,7 +59,7 @@ function calculate () {
 };
 
 function result () {
-	calculate ();
+	calculate();
 	sign = undefined;
 };
 
