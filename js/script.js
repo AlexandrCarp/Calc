@@ -1,3 +1,4 @@
+(function() {
 var sign,
 	savedNumber = '',
 	number = '',
@@ -102,3 +103,4 @@ addEvent(equally, result);
 addEvent(clear, clean);
 addLight(numbers);
 addEvent(back, backspace);
+}());
