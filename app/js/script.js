@@ -11,7 +11,23 @@ var sign,
 	clear = document.querySelectorAll('.clean'),
 	display = document.querySelector('.field'),
 	numbers = document.querySelectorAll('.figures'),
-	back = document.querySelectorAll('.backspace');
+	back = document.querySelectorAll('.backspace'),
+	calculator = document.querySelector('.calculator'),
+	topDiv = document.querySelector('.top');
+topDiv.onmousedown = function (e) {
+
+	document.onmousemove = function (e) {
+		moveAt(e);		
+	}
+	function moveAt(e) {
+		calculator.style.left = e.pageX - topDiv.offsetWidth / 2 + 'px';
+		calculator.style.top = e.pageY - topDiv.offsetHeight / 2 + 'px';
+	}
+	calculator.onmouseup = function() {
+		document.onmousemove = null;
+		calculator.onmouseup = null;
+	}
+};
 
 function addLight (element) {
 	for (var i=0, len=element.length; i<len; i++){
