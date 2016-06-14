@@ -1,0 +1,8 @@
+  NestingDepth:
+    enabled: false
+
+  PropertySortOrder:
+    order: recess
+
+  SelectorDepth:
+    enabled: false

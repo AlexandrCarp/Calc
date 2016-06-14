@@ -1,2 +1,8 @@
 node_modules
 app/css
+.DS_Store
+LICENSE
+linter.py
+messages.json
+messages
+.sublimelinterrc
